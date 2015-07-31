@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Posts</h1>
+
+  <article class="col-xs-8">
+
+    <div>
+      <% @posts.each do |post| %>
+
+        <h3>Title</h3>
+        <h4><%= link_to post.title, post %></h4>
+
+        <h3>Summary</h3>
+        <h4><%= post.summary %></h4>
+
+        <h3>URL</h3>
+        <h4><%= link_to post.rl_url, post.rl_url %></h4>
+
+        <h3>Number of votes</h3>
+        <h4><%= pluralize(post.votes.count, "vote")%></h4>
+
+        <div>
+        <%= button_to "+1", upvote_post_path(post), method: :post %>
+        </div>
+
+        <div>
+        <%= button_to "-1", downvote_post_path(post), method: :post %>
+        </div>
+
+        <!-- <h3>User</h3> -->
+        <!-- <h4># <%= post.user_id %></h4> -->
+
+        <ul class="list-inline">
+          <li><%= link_to 'Edit', edit_post_path(post) %></li>
+          <li><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+
+        <hr>
+
+      <% end %>
+
+    </div>
+
+</article>
+
+<br>
+
+  <aside class="col-xs-4"
+    <%= link_to 'New Post', new_post_path %>
+  </aside>
