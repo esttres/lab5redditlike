@@ -7,15 +7,6 @@
     <div>
       <% @posts.each do |post| %>
 
-        <h3>Title</h3>
-        <h4><%= link_to post.title, post %></h4>
-
-        <h3>Summary</h3>
-        <h4><%= post.summary %></h4>
-
-        <h3>URL</h3>
-        <h4><%= link_to post.rl_url, post.rl_url %></h4>
-
         <h3>Number of votes</h3>
         <h4><%= pluralize(post.vote_total, "vote")%> total</h4>
 
@@ -27,8 +18,14 @@
         <%= button_to "-1", downvote_post_path(post), method: :post %>
         </div>
 
-        <!-- <h3>User</h3> -->
-        <!-- <h4># <%= post.user_id %></h4> -->
+        <h3>Title</h3>
+        <h4><%= link_to post.title, post %></h4>
+
+        <h3>Summary</h3>
+        <h4><%= post.summary %></h4>
+
+        <h3>URL</h3>
+        <h4><%= link_to post.rl_url, post.rl_url %></h4>
 
         <ul class="list-inline">
           <li><%= link_to 'Edit', edit_post_path(post) %></li>
