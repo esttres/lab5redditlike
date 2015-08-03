@@ -64,13 +64,17 @@ class PostsController < ApplicationController
   def upvote
     @post = Post.find(params[:id])
     @post.votes.create
+    @post.vote_total = (@post.votes.count - @post.dvotes.count)
+    @post.save
     redirect_to(posts_path)
   end
 
   def downvote
     @post = Post.find(params[:id])
     @post.dvotes.create
-    redirect_to(posts_path)    
+    @post.vote_total = (@post.votes.count - @post.dvotes.count)
+    @post.save
+    redirect_to(posts_path)
   end
 
   private
