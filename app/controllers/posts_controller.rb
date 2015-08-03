@@ -69,9 +69,8 @@ class PostsController < ApplicationController
 
   def downvote
     @post = Post.find(params[:id])
-    @post.votes.last.destroy
-    redirect_to(posts_path)
-    
+    @post.dvotes.create
+    redirect_to(posts_path)    
   end
 
   private

@@ -17,7 +17,7 @@
         <h4><%= link_to post.rl_url, post.rl_url %></h4>
 
         <h3>Number of votes</h3>
-        <h4><%= pluralize(post.votes.count, "vote")%></h4>
+        <h4><%= pluralize((post.votes.count-post.dvotes.count), "vote")%> total</h4>
 
         <div>
         <%= button_to "+1", upvote_post_path(post), method: :post %>
