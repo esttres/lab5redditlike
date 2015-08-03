@@ -71,6 +71,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.votes.last.destroy
     redirect_to(posts_path)
+    
   end
 
   private
