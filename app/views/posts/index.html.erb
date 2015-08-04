@@ -1,50 +1,54 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+  <h1 class="col-xs-10 text-center">Listing Posts</h1>
 
-  <article class="col-xs-8">
+  <h2 class="col-xs-2 text-right"><%= link_to 'New Post', new_post_path %></h2>
 
-    <div>
-      <% @posts.each do |post| %>
+  <hr class="col-xs-12">
 
-        <h3>Title</h3>
-        <h4><%= link_to post.title, post %></h4>
+  <article class="col-xs-12">
 
-        <h3>Summary</h3>
-        <h4><%= post.summary %></h4>
+    <% @posts.each do |post| %>
 
-        <h3>URL</h3>
-        <h4><%= link_to post.rl_url, post.rl_url %></h4>
+      <div class="col-xs-12">
 
-        <h3>Number of votes</h3>
-        <h4><%= pluralize(post.vote_total, "vote")%> total</h4>
+        <div class="col-xs-1">
+          <%= button_to "+1", upvote_post_path(post), method: :post %>
 
-        <div>
-        <%= button_to "+1", upvote_post_path(post), method: :post %>
+          <%= button_to "-1", downvote_post_path(post), method: :post %>
         </div>
 
-        <div>
-        <%= button_to "-1", downvote_post_path(post), method: :post %>
+        <div class="col-xs-2">
+          <h4><%= pluralize(post.vote_total, "Vote")%> Total</h5>
         </div>
 
-        <!-- <h3>User</h3> -->
-        <!-- <h4># <%= post.user_id %></h4> -->
+        <div class="col-xs-2">
+          <h4>Title</h4>
+          <h5><%= link_to post.title, post %></h5>
+        </div>
 
-        <ul class="list-inline">
+        <div class="col-xs-7">
+          <h4 >Summary</h4>
+          <h5><%= post.summary %></h5>
+        </div>
+
+      </div>
+
+      <div class="col-xs-12">
+
+        <div class="col-xs-8">
+          <h4>URL: <span><%= link_to post.rl_url, post.rl_url %></span></h4>
+        </div>
+
+        <ul class="col-xs-4 list-inline">
           <li><%= link_to 'Edit', edit_post_path(post) %></li>
           <li><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         </ul>
 
-        <hr>
+      </div>
 
-      <% end %>
+      <hr class="col-xs-12">
 
-    </div>
+    <% end %>
 
-</article>
-
-<br>
-
-  <aside class="col-xs-4">
-    <%= link_to 'New Post', new_post_path %>
-  </aside>
+  </article>
