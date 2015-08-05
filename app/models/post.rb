@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :rl_url
   has_many :votes, dependent: :destroy
   has_many :dvotes, dependent: :destroy
+  has_many :comments, :as => :commentated
   belongs_to :user
 
 end
