@@ -11,5 +11,5 @@ Post.create(:id => 1, :title => 'The first seed URL', :summary => 'this is the f
 Post.create(:id => 2, :title => 'The second seed URL', :summary => 'this is the second seed URL',
             :rl_url => 'www.hotmail.com', :user_id => 1, :vote_total => 0)
 
-User.create!(:name => 'Silas Tolliver', :email => 'esttres@hotmail.com', :password => '123456789',
+User.create(:name => 'Silas Tolliver', :email => 'esttres@hotmail.com', :password => '123456789',
              :password_confirmation => '123456789')
