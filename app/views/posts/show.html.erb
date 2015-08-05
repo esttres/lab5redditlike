@@ -21,6 +21,8 @@
   <%= @post.vote_total %>
 </p>
 
+
+
 <% if current_user %>
   <%= render :partial => 'comments/form', :locals => {:commentated_object => @post} %>
 <% end %>
