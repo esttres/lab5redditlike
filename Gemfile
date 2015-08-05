@@ -6,6 +6,10 @@ gem 'rails_12factor', group: :production
 
 gem 'devise'
 
+gem 'bootstrap-sass'
+
+gem 'bootstrap_form'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 
