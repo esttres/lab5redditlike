@@ -10,6 +10,8 @@ gem 'bootstrap-sass'
 
 gem 'bootstrap_form'
 
+gem 'validate_url'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 
