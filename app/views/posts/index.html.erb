@@ -36,7 +36,7 @@
 
         <div class="col-xs-8">
           <h4>URL:
-            <span><%= link_to post.rl_url, post.rl_url %></span>
+            <span><%= link_to post.title, post.rl_url %></span>
             <small class="author">Submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %></small>
           </h4>
         </div>
